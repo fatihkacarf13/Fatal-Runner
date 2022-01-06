@@ -6,7 +6,7 @@ public class SphereController : MonoBehaviour
 {
     Rigidbody move;
     private CharacterController control;
-    bool gamestart = true;
+    public  bool gamestart = true;
     bool sphereonplane = true;
 
     void Start()
@@ -29,7 +29,7 @@ public class SphereController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && sphereonplane)
         {
-            move.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+            move.AddForce(new Vector3(0, 6.5f, 0), ForceMode.Impulse);
             sphereonplane = false;
         }
 
