@@ -16,13 +16,13 @@ public class SphereController : MonoBehaviour
        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
        
         if (gamestart)
         {
-            //move.AddForce(new Vector3(0, 0, 1));
+           
             transform.Translate(Vector3.forward * Time.deltaTime * 3f);
 
         }
@@ -32,17 +32,6 @@ public class SphereController : MonoBehaviour
             move.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
             sphereonplane = false;
         }
-
-
-        
-     
-
-
-
-
-
-
-
 
 
 }
