@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             lastMousePosition = Input.mousePosition;
-
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -27,12 +26,7 @@ public class PlayerController : MonoBehaviour
             float moveX = diff.x * speed;
             moveX = Mathf.Clamp(moveX, -clampX, clampX);
             transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
-
         }
-
-       
-
-
     }
 
 
