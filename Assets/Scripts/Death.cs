@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Death : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("GameScene");
         }
     }
 }
