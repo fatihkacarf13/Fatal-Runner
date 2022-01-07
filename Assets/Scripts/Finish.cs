@@ -9,7 +9,7 @@ public class Finish : MonoBehaviour
     
      void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Finish"))
+        if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene("Level2");
         }

@@ -123,10 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d547338b0de8f438e06622fbe01f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamestart: 1
-  maxx: 2
-  minx: 2
-  Point: {fileID: 0}
+  clampX: 2
+  speed: 0.03
+  point: {fileID: 0}
 --- !u!54 &8326530697044142135
 Rigidbody:
   m_ObjectHideFlags: 0
