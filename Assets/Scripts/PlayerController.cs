@@ -6,97 +6,42 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     
-    public  bool GameStart = true;
-    public float MaxX;
-    public float MinX;
-    float horizontal=0;
-    public float Speed;
-    int Score = 0;
-    public Text Point;
-    Vector3 vec;
-    
-    void Start()
-    {
-        
+   
+    public float clampX;
+    public float speed;
+    private int _score = 0;
+    public Text point;
 
+    private Vector3 lastMousePosition;
 
-
-    }
-
-    
     void FixedUpdate()
     {
-       
-        if (GameStart)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            lastMousePosition = Input.mousePosition;
 
-            //transform.Translate(Vector3.forward * Time.deltaTime * 3f);
+        }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            Vector3 diff = Input.mousePosition - lastMousePosition;
+            float moveX = diff.x * speed;
+            moveX = Mathf.Clamp(moveX, -clampX, clampX);
+            transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
 
-            horizontal = Input.GetAxis("Mouse X");
-
-            vec = new Vector3(horizontal, 0);
-
-            transform.Translate(Vector3.forward * Time.deltaTime * 3f);
-
-            transform.Translate(horizontal * Speed * Time.deltaTime, 0, 0);
-
-            //transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinX, MaxX), 0, 0);
-
-
-
-
-
-
-
-
-
-            //Move.position = new Vector3(Mathf.Clamp(Move.position.x, MinX, MaxX), 0, 0);
         }
 
-
-
-
-
-
-    }
-
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.LeftArrow) /*&& transform.position.x < minx*/)
-        //{
-        //    transform.position += Vector3.left;
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.RightArrow) /*&& transform.position.x < maxx*/)
-        //{
-        //    transform.position += Vector3.right;
-        //}
-
-
-
-
-
-
-        //GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3);
-
+       
 
 
     }
-
-
-    private void LateUpdate()
-    {
-        transform.Translate(Vector3.forward * Time.deltaTime * 3f);
-    }
-
 
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Point"))
         {
-            Score++;
-            Point.text = "Score:" + Score;
+            _score++;
+            point.text = "Score:" + _score;
             Destroy(col.gameObject);
         }
     }
