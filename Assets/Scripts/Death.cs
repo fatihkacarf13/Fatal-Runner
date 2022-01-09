@@ -11,7 +11,7 @@ public class Death : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene(0);
         }
     }
 }

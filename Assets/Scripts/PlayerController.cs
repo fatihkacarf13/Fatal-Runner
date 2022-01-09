@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     
@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private int _score = 0;
     public Text point;
-
     private Vector3 lastMousePosition;
 
     void FixedUpdate()
