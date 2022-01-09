@@ -6,12 +6,5 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(0);
-        }
-    }
+    
 }

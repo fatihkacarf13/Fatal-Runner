@@ -9,17 +9,9 @@ public class MainMenuControl : MonoBehaviour
     public void startGame()
     {
 
-        int Level = PlayerPrefs.GetInt("Level");
-
-        if (Level==0)
-        {
+       
             SceneManager.LoadScene("Level1");
-        }
-        else
-        {
-            SceneManager.LoadScene(Level);
-
-        }
+        
     }
 
     

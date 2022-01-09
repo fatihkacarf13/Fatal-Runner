@@ -5,13 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
-    
-   
+
+
     public float clampX;
     public float speed;
-    private int _score = 0;
+    static int _score = 0;
     public Text point;
     private Vector3 lastMousePosition;
+    static int nextLevel = 1;
+
+
 
     void FixedUpdate()
     {
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Point"))
         {
@@ -37,13 +40,23 @@ public class PlayerController : MonoBehaviour
             point.text = "Score:" + _score;
             Destroy(col.gameObject);
         }
+
+        if (col.CompareTag("Finish"))
+        {
+
+            nextLevel++;
+
+            SceneManager.LoadScene(nextLevel);
+            
+        }
+
+        if (col.CompareTag("Enemy"))
+        {
+            _score = 0;
+            Destroy(gameObject);
+            SceneManager.LoadScene(0);
+        }
     }
-
-   
-
-
-
-
 
 
 }

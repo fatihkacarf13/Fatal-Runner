@@ -236,10 +236,9 @@ GameObject:
   - component: {fileID: 8201983263617699109}
   - component: {fileID: 1751808744545108568}
   - component: {fileID: 7409193757059682157}
-  - component: {fileID: 2654044100533554592}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,18 +319,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2654044100533554592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5362161687454293456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554cfab52665f4649865eae67bc8dc24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7187123038525652061
 GameObject:
   m_ObjectHideFlags: 0
