@@ -13,6 +13,8 @@ TagManager:
   - GreenGate
   - RedGate
   - YellowGate
+  - Boss
+  - New
   layers:
   - Default
   - TransparentFX

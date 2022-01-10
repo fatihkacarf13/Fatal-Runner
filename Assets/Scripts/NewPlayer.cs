@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class NewPlayer : BaseColorable
@@ -11,6 +12,8 @@ public class NewPlayer : BaseColorable
     [SerializeField] private ColorType startColor;
     private Vector3 lastMousePosition;
     public Vector3 increment = Vector3.one * 0.1f;
+    int scoreCount = 0;
+    public Text scoreText;
 
     private void Awake()
     {
@@ -35,10 +38,40 @@ public class NewPlayer : BaseColorable
     public void ScaleUp()
     {
         transform.localScale += increment;
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+        scoreCount++;
+        scoreText.text = "Score : " + scoreCount;
     }
 
     public void ScaleDown()
     {
         transform.localScale -= increment;
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z);
+        if (scoreCount==0)
+        {
+            scoreCount = 0;
+            scoreText.text = "Score : " + scoreCount;
+        }
+        else
+        {
+            scoreCount--;
+            scoreText.text = "Score : " + scoreCount;
+        }
+        
+    }
+
+     void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Boss"))
+        {
+            if (scoreCount>=10)
+            {
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
