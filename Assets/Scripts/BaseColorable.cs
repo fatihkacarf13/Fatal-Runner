@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum ColorType
 
 {
@@ -10,25 +9,19 @@ public enum ColorType
 }
 
 public class BaseColorable : MonoBehaviour
-
 {
-
     public Material Red;
     public Material Green;
     public Material Yellow;
     [SerializeField]private ColorType colorType;
     public Renderer renderer;
 
-
-   
-
-
     public void SetColor(ColorType c)
     {
         colorType = c;
-        UpdateColorType();
-        
+        UpdateColorType(); 
     }
+
     public ColorType GetColor()
     {
         return colorType;
@@ -51,7 +44,5 @@ public class BaseColorable : MonoBehaviour
                 break;
         }
     }
-
-
 
 }

@@ -12,9 +12,5 @@ public class CameraControl : MonoBehaviour
         {
             transform.position = follow.transform.position + new Vector3(0, 3f+ follow.transform.localScale.y, -5);
         }
-        
     }
-    
-
-
 }

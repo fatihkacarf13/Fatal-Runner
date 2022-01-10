@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collectable : BaseColorable
 {
-
     private void OnTriggerEnter(Collider other)
     {
        var player = other.GetComponent<NewPlayer>();
@@ -13,7 +12,6 @@ public class Collectable : BaseColorable
             if (GetColor() == player.GetColor())
             {
                 player.ScaleUp();
-                
             }
             else
             {

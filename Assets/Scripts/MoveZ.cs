@@ -13,6 +13,5 @@ public class MoveZ : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speedZ);
         }
-        
     }
 }

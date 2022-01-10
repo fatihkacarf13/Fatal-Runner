@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class NewPlayer : BaseColorable
 {
-
     public float clampX;
     public float speed;
     [SerializeField] private ColorType startColor;
     private Vector3 lastMousePosition;
     public Vector3 increment = Vector3.one * 0.1f;
-
 
     private void Awake()
     {
@@ -34,8 +32,6 @@ public class NewPlayer : BaseColorable
         }
     }
 
-
-
     public void ScaleUp()
     {
         transform.localScale += increment;
@@ -45,7 +41,4 @@ public class NewPlayer : BaseColorable
     {
         transform.localScale -= increment;
     }
-
-
-
 }
