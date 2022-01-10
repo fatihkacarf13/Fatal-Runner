@@ -7,6 +7,12 @@ TagManager:
   - Plane
   - Enemy
   - Point
+  - Red
+  - Yellow
+  - Green
+  - GreenGate
+  - RedGate
+  - YellowGate
   layers:
   - Default
   - TransparentFX

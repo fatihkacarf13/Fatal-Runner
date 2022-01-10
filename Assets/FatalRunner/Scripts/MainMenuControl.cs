@@ -8,10 +8,7 @@ public class MainMenuControl : MonoBehaviour
    
     public void startGame()
     {
-
-       
             SceneManager.LoadScene("Level1");
-        
     }
 
     

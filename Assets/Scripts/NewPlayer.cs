@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class PlayerController : MonoBehaviour
-{
 
+
+public class NewPlayer : BaseColorable
+{
 
     public float clampX;
     public float speed;
-    static int _score = 0;
-    public Text point;
+    [SerializeField] private ColorType startColor;
     private Vector3 lastMousePosition;
-    static int nextLevel = 1;
+    public Vector3 increment = Vector3.one * 0.1f;
 
 
+    private void Awake()
+    {
+        SetColor(startColor);
+    }
 
     void FixedUpdate()
     {
@@ -32,31 +35,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider col)
+
+    public void ScaleUp()
     {
-        if (col.gameObject.CompareTag("Point"))
-        {
-            _score++;
-            point.text = "Score:" + _score;
-            Destroy(col.gameObject);
-        }
-
-        if (col.CompareTag("Finish"))
-        {
-
-            nextLevel++;
-
-            SceneManager.LoadScene(nextLevel);
-            
-        }
-
-        if (col.CompareTag("Enemy"))
-        {
-            _score = 0;
-            Destroy(gameObject);
-            SceneManager.LoadScene(0);
-        }
+        transform.localScale += increment;
     }
+
+    public void ScaleDown()
+    {
+        transform.localScale -= increment;
+    }
+
 
 
 }
