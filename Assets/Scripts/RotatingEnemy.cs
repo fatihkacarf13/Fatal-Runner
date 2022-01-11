@@ -17,6 +17,7 @@ public class RotatingEnemy : MonoBehaviour
         if (player)
         {
             Destroy(col.gameObject);
+            SceneManager.LoadScene("Level4");
         }
     }
 }

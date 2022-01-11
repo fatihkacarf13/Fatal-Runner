@@ -12,8 +12,9 @@ public class NewPlayer : BaseColorable
     [SerializeField] private ColorType startColor;
     private Vector3 lastMousePosition;
     public Vector3 increment = Vector3.one * 0.1f;
-    int scoreCount = 0;
+    private int _scoreCount = 0;
     public Text scoreText;
+    public int bossHealt;
 
     private void Awake()
     {
@@ -39,23 +40,23 @@ public class NewPlayer : BaseColorable
     {
         transform.localScale += increment;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
-        scoreCount++;
-        scoreText.text = "Score : " + scoreCount;
+        _scoreCount++;
+        scoreText.text = "Score : " + _scoreCount;
     }
 
     public void ScaleDown()
     {
         transform.localScale -= increment;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z);
-        if (scoreCount==0)
+        if (_scoreCount==0)
         {
-            scoreCount = 0;
-            scoreText.text = "Score : " + scoreCount;
+            _scoreCount = 0;
+            scoreText.text = "Score : " + _scoreCount;
         }
         else
         {
-            scoreCount--;
-            scoreText.text = "Score : " + scoreCount;
+            _scoreCount--;
+            scoreText.text = "Score : " + _scoreCount;
         }
         
     }
@@ -64,13 +65,17 @@ public class NewPlayer : BaseColorable
     {
         if (col.CompareTag("Boss"))
         {
-            if (scoreCount>=10)
+            if (_scoreCount>=bossHealt)
             {
+
                 Destroy(col.gameObject);
+                SceneManager.LoadScene("Level5");
             }
             else
             {
+                _scoreCount = 0;
                 Destroy(gameObject);
+                SceneManager.LoadScene("Level4");
             }
         }
     }
