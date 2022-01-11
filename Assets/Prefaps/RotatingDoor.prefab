@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8036999752841265273}
   - component: {fileID: 8036999752841265222}
   - component: {fileID: 1746702202165327523}
+  - component: {fileID: 6818711191191552649}
   m_Layer: 0
   m_Name: RotatingDoor
   m_TagString: Untagged
@@ -109,3 +110,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 45
+--- !u!114 &6818711191191552649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036999752841265220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1827871d38e41b41bdbfc591cc37aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

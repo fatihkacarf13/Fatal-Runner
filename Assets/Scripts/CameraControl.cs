@@ -10,7 +10,7 @@ public class CameraControl : MonoBehaviour
     {
         if (follow)
         {
-            transform.position = follow.transform.position + new Vector3(0, 3f+ follow.transform.localScale.y, -5);
+            transform.position = follow.transform.position + new Vector3(0, 3f+ follow.transform.localScale.y, -5- follow.transform.localScale.y);
         }
     }
 }
