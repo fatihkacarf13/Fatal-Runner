@@ -7,33 +7,16 @@ using UnityEngine.UI;
 
 public class NewPlayer : BaseColorable
 {
-    public float clampX;
-    public float speed;
     [SerializeField] private ColorType startColor;
-    private Vector3 lastMousePosition;
     public Vector3 increment = Vector3.one * 0.1f;
-    private int _scoreCount = 0;
+    static int _scoreCount = 0;
     public Text scoreText;
     public int bossHealt;
+    static int nextLevel = 0;
 
     private void Awake()
     {
         SetColor(startColor);
-    }
-
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            lastMousePosition = Input.mousePosition;
-        }
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            Vector3 diff = Input.mousePosition - lastMousePosition;
-            float moveX = diff.x * speed;
-            moveX = Mathf.Clamp(moveX, -clampX, clampX);
-            transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
-        }
     }
 
     public void ScaleUp()
@@ -63,20 +46,51 @@ public class NewPlayer : BaseColorable
 
      void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Boss"))
-        {
-            if (_scoreCount>=bossHealt)
+            if (col.gameObject.CompareTag("Wall"))
             {
-
+            if (transform.localScale.y * 2 > col.transform.localScale.y)
+            {
+                _scoreCount += 10;
+                scoreText.text = "Score:" + _scoreCount;
                 Destroy(col.gameObject);
-                SceneManager.LoadScene("Level5");
+
             }
             else
             {
                 _scoreCount = 0;
                 Destroy(gameObject);
-                SceneManager.LoadScene("Level4");
+                nextLevel = 0;
+                SceneManager.LoadScene(nextLevel);
             }
+
+            }
+
+            if (col.CompareTag("Boss"))
+            {
+            if (transform.localScale.y>=col.transform.localScale.y)
+            {
+                _scoreCount += 20;
+                Destroy(col.gameObject);
+                nextLevel++;
+                SceneManager.LoadScene(nextLevel);
+            }
+            else
+            {
+                _scoreCount = 0;
+                Destroy(gameObject);
+                nextLevel = 0;
+                SceneManager.LoadScene(nextLevel);
+            }
+            }
+
+        if (col.CompareTag("Enemy"))
+        {
+
+            _scoreCount = 0;
+            nextLevel = 0;
+            Destroy(col.gameObject);
+            SceneManager.LoadScene(nextLevel);
+            
         }
     }
 }

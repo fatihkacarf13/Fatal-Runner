@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+
+        
         if (col.gameObject.CompareTag("Point"))
         {
             _score++;

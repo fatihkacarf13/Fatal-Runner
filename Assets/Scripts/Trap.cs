@@ -4,29 +4,20 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    //public float trunZ;
-    //public bool world;
-    //public float limitZ;
 
 
-    //void Update()
-    //{
 
-       
-        
-       
-    //    if (gameObject.transform.rotation.z==179)
-    //    {
-    //        transform.Rotate(Vector3.back*45*Time.deltaTime);
-            
-    //    }
-    //    else 
-    //    {
-    //        transform.Rotate(Vector3.forward * 45 * Time.deltaTime);
+    void Update()
+    {
 
 
-    //    }
-    //}
+        //Vector3 rotateZ = transform.localRotation.eulerAngles;
+        //rotateZ.z = Mathf.Clamp(rotateZ.z, -1, 179);
+        //transform.localRotation = new Vector3(transform.rotation.x, transform.rotation.y,transform.rotation.z rotateY);
+
+
+
+    }
 
 
 

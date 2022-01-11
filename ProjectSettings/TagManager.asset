@@ -15,6 +15,7 @@ TagManager:
   - YellowGate
   - Boss
   - New
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
-    //Vector3 dist;
-    //float posX;
-    //public float clampX;
-    //public float speed;
+    public float clampX;
+    public float speed;
+    private Vector3 lastMousePosition;
 
-    // void OnMouseDown()
-    //{
-    //    dist = Camera.main.WorldToScreenPoint(transform.position);
-    //    posX = Input.mousePosition.x - dist.x;
-        
-    //}
-
-    // void OnMouseDrag()
-    //{
-
-    //    Vector3 curPos = new Vector3(Input.mousePosition.x - posX, dist.y, dist.z);
-    //    Vector3 worldPos = Camera.main.ScreenToWorldPoint(curPos);
-    //    transform.position=worldPos;
-    //}
-
-
-
-
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            lastMousePosition = Input.mousePosition;
+        }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            Vector3 diff = Input.mousePosition - lastMousePosition;
+            float moveX = diff.x * speed;
+            moveX = Mathf.Clamp(moveX, -clampX, clampX);
+            transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
+        }
+    }
 
 }
