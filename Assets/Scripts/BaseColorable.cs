@@ -14,7 +14,7 @@ public class BaseColorable : MonoBehaviour
     public Material Green;
     public Material Yellow;
     [SerializeField]private ColorType colorType;
-    public Renderer renderer;
+    public new Renderer renderer;
 
     public void SetColor(ColorType c)
     {
