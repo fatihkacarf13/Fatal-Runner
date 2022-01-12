@@ -12,7 +12,6 @@ public class NewPlayer : BaseColorable
     static int _scoreCount = 0;
     [SerializeField] private Text scoreText;
     static int level = 0;
-    
 
     private void Awake()
     {
@@ -57,10 +56,12 @@ public class NewPlayer : BaseColorable
     public void NextLevel()
     {
         level++;
+        //level = level % SceneManager.sceneCount;
         SceneManager.LoadScene(level);
     }
     public void RestartLevel()
     {
+        
         SceneManager.LoadScene(level);
     }
 

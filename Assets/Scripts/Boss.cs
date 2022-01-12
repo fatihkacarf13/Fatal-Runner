@@ -5,22 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField]private MoveZ _moveZ;
+    [SerializeField] private MoveZ _moveZ;
     bool bossDeath = false;
-    Vector3 target = new Vector3(1, 1, 1);
     bool nextLevel = false;
     [SerializeField] private NewPlayer _player;
 
     private void Awake()
     {
-      _moveZ = FindObjectOfType<MoveZ>();
+        _moveZ = FindObjectOfType<MoveZ>();
         _player = FindObjectOfType<NewPlayer>();
-
-
     }
     public void OnTriggerEnter(Collider other)
     {
-
         var player = other.GetComponent<NewPlayer>();
 
         if (player)
@@ -31,7 +27,7 @@ public class Boss : MonoBehaviour
             {
                 bossDeath = true;
                 player.Score += 20;
-                
+
 
             }
             else
@@ -47,23 +43,19 @@ public class Boss : MonoBehaviour
             Destroy(gameObject);
         }
 
-
     }
 
-     void Update()
+    void Update()
     {
         if (bossDeath)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * 10);
         }
-
     }
 
     public void OnDisable()
     {
-
-         _player.NextLevel();
-        
+        _player.NextLevel();
     }
 
 }
