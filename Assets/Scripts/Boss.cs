@@ -6,25 +6,33 @@ using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {
     [SerializeField]private MoveZ _moveZ;
+    bool bossDeath = false;
+    Vector3 target = new Vector3(1, 1, 1);
+    bool nextLevel = false;
+    [SerializeField] private NewPlayer _player;
 
     private void Awake()
     {
       _moveZ = FindObjectOfType<MoveZ>();
+        _player = FindObjectOfType<NewPlayer>();
+
 
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
 
         var player = other.GetComponent<NewPlayer>();
+
         if (player)
         {
             _moveZ.isMove = false;
 
             if (player.transform.localScale.y >= transform.localScale.y)
             {
+                bossDeath = true;
                 player.Score += 20;
-                Destroy(gameObject);
-                player.NextLevel();
+                
+
             }
             else
             {
@@ -34,6 +42,28 @@ public class Boss : MonoBehaviour
             }
         }
 
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
 
     }
+
+     void Update()
+    {
+        if (bossDeath)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 10);
+        }
+
+    }
+
+    public void OnDisable()
+    {
+
+         _player.NextLevel();
+        
+    }
+
 }

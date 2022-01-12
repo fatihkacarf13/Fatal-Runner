@@ -57,7 +57,6 @@ public class NewPlayer : BaseColorable
     public void NextLevel()
     {
         level++;
-        level = level % SceneManager.sceneCount;
         SceneManager.LoadScene(level);
     }
     public void RestartLevel()
