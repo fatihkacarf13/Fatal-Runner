@@ -2,69 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFight : MonoBehaviour
+public class BossFight : ScaleControl
 {
-    [SerializeField] private MoveZ _moveZ;
     [SerializeField] private NewPlayer _player;
-    float minSize = -0.1f;
-    float shrinkageRate = 0.5f;
-    public float scale =-2f ;
+    [SerializeField] private BossHealt _boss;
+    [SerializeField] private MoveZ _moveZ;
+
     bool fight = false;
     bool fightResult;
+
 
 
     private void Awake()
     {
         _moveZ = FindObjectOfType<MoveZ>();
-        
+        _player = FindObjectOfType<NewPlayer>();
+        _boss = FindObjectOfType<BossHealt>();
     }
-    public void OnTriggerEnter(Collider other)
+
+    public void OnTriggerStay(Collider other)
     {
         var player = other.GetComponent<NewPlayer>();
-
         if (player)
         {
-            _moveZ.isMove = false;
+
             fight = true;
-            if (transform.localScale.y <= player.transform.localScale.y)
-            {
-                fightResult = false;
-            }
-            else
+
+            if (transform.localScale.y > player.transform.localScale.y)
             {
                 fightResult = true;
             }
-        }
-
-
-
-    }
-
-    void FixedUpdate()
-    {
-        
-        if (!fightResult && fight)
-        {
-            transform.position = new Vector3(transform.position.x,  -1f*scale, transform.position.z);
-            transform.localScale = Vector3.one * scale;
-            scale += shrinkageRate * Time.deltaTime;
-            
-            if (scale > minSize)
+            else
             {
-                Destroy(gameObject);
+                fightResult = false;
             }
-        }
-        if (fightResult && fight)
-        {
-            transform.position = new Vector3(transform.position.x, -1f * scale, transform.position.z);
-            transform.localScale = Vector3.one * scale;
-            scale += shrinkageRate * Time.deltaTime;
-            if (scale > minSize)
+            if (!fightResult && fight)
+            {
+                ScaleD();
+                System.Threading.Thread.Sleep(10);
+
+            }
+            if (fightResult && fight)
+            {
+                ScaleD();
+                System.Threading.Thread.Sleep(10);
+            }
+            if (transform.localScale.y == 0f)
             {
                 fight = false;
             }
         }
+
     }
 
+    public void LateUpdate()
+    {
+        if (transform.localScale.y<= 0.25f)
+        {
+
+            fight = false;
+            _moveZ.isMove = false;
+            Destroy(gameObject);
+        }
+        if (transform.localScale.y <= 0.25f)
+        {
+            
+            _player.NextLevel();
+            System.Threading.Thread.Sleep(500);
+        }
+
+    }
 
 }
