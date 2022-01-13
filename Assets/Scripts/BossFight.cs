@@ -8,7 +8,8 @@ public class BossFight : ScaleControl
     [SerializeField] private MoveZ _moveZ;
 
     bool fight = false;
-    bool fightResult;
+    private float _healt;
+    public bool win = false;
 
 
 
@@ -35,20 +36,24 @@ public class BossFight : ScaleControl
 
     }
 
-    public void LateUpdate()
+    public void Update()
     {
-        if (transform.localScale.y<= 0.25f)
+        _healt = transform.localScale.y;
+        if (_healt<= 0.25f)
         {
 
             fight = false;
             _moveZ.isMove = false;
             Destroy(gameObject);
+            win = true;
+
+
         }
-        if (transform.localScale.y <= 0.25f)
+        if (win)
         {
-            
+            System.Threading.Thread.Sleep(1000);
             _player.NextLevel();
-            System.Threading.Thread.Sleep(500);
+            
         }
 
     }

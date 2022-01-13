@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-
+    public float speed;
+    public float z ;
 
 
     public void Update()
     {
+        Vector3 to = new Vector3(0, 0, z);
 
-        if (transform.rotation.z == 0)
-        {
-            transform.Rotate(0, 0, 45 * Time.deltaTime);
-        }
-        if (transform.rotation.z == 90)
-        {
-            transform.Rotate(0, 0,- 45 * Time.deltaTime);
-        }
+        transform.eulerAngles= Vector3.Lerp(transform.rotation.eulerAngles, to, speed);
+
+
     }
-
 
 }

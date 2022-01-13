@@ -9,19 +9,18 @@ public class Testdrag : MonoBehaviour
     private float mZCoord;
     private Vector3 mOffset;
     public float clampX;
-    public float speed;
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).x;
+            mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
             mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            float moveX = mOffset.x * speed + GetMouseAsWorldPoint().x * speed;
+            float moveX = mOffset.x + GetMouseAsWorldPoint().x;
             moveX = Mathf.Clamp(moveX, -clampX, clampX);
             transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
         }
@@ -34,4 +33,3 @@ public class Testdrag : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 }
-
