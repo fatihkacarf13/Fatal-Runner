@@ -16,6 +16,7 @@ TagManager:
   - Boss
   - New
   - Wall
+  - Fight
   layers:
   - Default
   - TransparentFX

@@ -66,9 +66,5 @@ public class BossFight : MonoBehaviour
         }
     }
 
-    public void OnDestroy()
-    {
-        _player.NextLevel();
-    }
 
 }

@@ -13,7 +13,7 @@ public class PlayerFight : MonoBehaviour
     bool fightOver;
 
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Boss"))
         {
@@ -56,9 +56,9 @@ public class PlayerFight : MonoBehaviour
 
     }
 
-    private void OnDisable()
-    {
-        _player.RestartLevel();
+    //private void OnDisable()
+    //{
+    //    _player.RestartLevel();
 
-    }
+    //}
 }

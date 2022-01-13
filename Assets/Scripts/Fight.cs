@@ -2,52 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fight : MonoBehaviour
+public class Fight : ScaleControl
 {
-    float minSize = -0.1f;
-    float shrinkageRate = 0.50f;
-    float scale=-1f;
+    [SerializeField] private MoveZ _moveZ;
     bool fight = false;
     bool fightResult;
-    bool fightOver;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Awake()
     {
-        fight = true;
-        if (transform.localScale.y <= other.transform.localScale.y)
-        {
-            fightResult = false;
-        }
-        else
-        {
-            fightResult = true;
-        }
+        _moveZ = FindObjectOfType<MoveZ>();
+
     }
-    void Update()
-    {
 
-        if (!fightResult && fight)
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Fight"))
         {
-            transform.localScale = Vector3.one * scale;
-            scale += shrinkageRate * Time.deltaTime;
-            if (scale > minSize)
+
+            fight = true;
+            if (transform.localScale.y > other.transform.localScale.y)
             {
-                Destroy(gameObject);
+                fightResult = true;
             }
-        }
-        if (fightResult && fight)
-        {
-            transform.localScale = Vector3.one * scale;
-            scale += shrinkageRate * Time.deltaTime;
-            if (scale > minSize)
+            else
             {
-                fight = false;
+                fightResult = false;
             }
-        }
-        if (fightOver)
-        {
-            //SceneManager.LoadScene(0);
+            if (!fightResult && fight)
+            {
+                ScaleD();
+
+            }
+            if (fightResult && fight)
+            {
+                ScaleD();
+                if (other.transform.localScale.y <= 0)
+                {
+                    fight = false;
+                    _moveZ.isMove = false;
+                }
+            }
         }
 
     }
+
+
+
 }

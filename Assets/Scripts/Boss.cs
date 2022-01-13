@@ -7,7 +7,6 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] private MoveZ _moveZ;
     bool bossDeath = false;
-    bool nextLevel = false;
     [SerializeField] private NewPlayer _player;
 
     private void Awake()
@@ -53,9 +52,9 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void OnDisable()
-    {
-        _player.NextLevel();
-    }
+    //public void OnDisable()
+    //{
+    //    _player.NextLevel();
+    //}
 
 }
