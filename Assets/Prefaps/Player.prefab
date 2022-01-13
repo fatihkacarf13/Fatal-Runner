@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9004367675663646755}
   - component: {fileID: -4904929499675649739}
   - component: {fileID: 1116576443}
+  - component: {fileID: 434085292143135688}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -117,9 +118,8 @@ MonoBehaviour:
   colorType: 0
   renderer: {fileID: 3247254917679591701}
   startColor: 0
-  increment: {x: 0.1, y: 0.1, z: 0.1}
+  increment: 0.1
   scoreText: {fileID: 0}
-  bossHealt: 10
 --- !u!114 &-4904929499675649739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +150,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &434085292143135688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304174447426519284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f79c1f9572e994a8d4aafe2895ef85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increment: 0.1
+  _player: {fileID: 0}
+  _moveZ: {fileID: 0}

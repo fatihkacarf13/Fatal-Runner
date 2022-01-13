@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerFight : ScaleControl
 {
     [SerializeField] private NewPlayer _player;
-    [SerializeField] private BossHealt _boss;
     [SerializeField] private MoveZ _moveZ;
 
     bool fight = false;
@@ -16,7 +15,7 @@ public class PlayerFight : ScaleControl
     {
         _moveZ = FindObjectOfType<MoveZ>();
         _player = FindObjectOfType<NewPlayer>();
-        _boss = FindObjectOfType<BossHealt>();
+
     }
 
     public void OnTriggerStay(Collider other)
@@ -27,28 +26,10 @@ public class PlayerFight : ScaleControl
 
             fight = true;
 
-            if (transform.localScale.y > other.transform.localScale.y)
-            {
-                fightResult = true;
-            }
-            else
-            {
-                fightResult = false;
-            }
-            if (!fightResult && fight)
+            if (fight)
             {
                 ScaleD();
                 System.Threading.Thread.Sleep(10);
-            }
-            if (fightResult && fight)
-            {
-                ScaleD();
-                System.Threading.Thread.Sleep(10);
-
-            }
-            if (transform.localScale.y == 0f)
-            {
-                fight = false;
             }
         }
 
