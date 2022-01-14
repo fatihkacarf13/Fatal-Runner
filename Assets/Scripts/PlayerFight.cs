@@ -8,7 +8,6 @@ public class PlayerFight : ScaleControl
     [SerializeField] private MoveZ _moveZ;
 
     bool fight = false;
-    bool fightResult;
 
 
     private void Awake()

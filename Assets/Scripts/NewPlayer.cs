@@ -58,10 +58,14 @@ public class NewPlayer : BaseColorable
         level++;
         //level = level % SceneManager.sceneCount;
         SceneManager.LoadScene(level);
+        if (level==3)
+        {
+            level--;
+        }
     }
     public void RestartLevel()
     {
-        
+        _scoreCount = 0;
         SceneManager.LoadScene(level);
     }
 
