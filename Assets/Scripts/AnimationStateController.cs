@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
+    [SerializeField] private MoveZ _moveZ;
     Animator animator;
-    int isPunchingHash;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        isPunchingHash = Animator.StringToHash("isPunching");
+        _moveZ = FindObjectOfType<MoveZ>();
     }
 
 
 
     void Update()
     {
-        bool isPunching = animator.GetBool(isPunchingHash);
-        bool punchingKey = Input.GetKey(KeyCode.W);
-        if (!isPunching&& punchingKey)
+        if (_moveZ.isMove==true)
         {
-            animator.SetBool(isPunchingHash, true);
-            Debug.Log("sss");
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+
+            animator.SetBool("isPunching", true);
+
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            animator.SetBool("isPunching", false);
 
         }
     }

@@ -1018,6 +1018,7 @@ GameObject:
   - component: {fileID: 170939783}
   - component: {fileID: 170939782}
   - component: {fileID: 170939781}
+  - component: {fileID: 170939784}
   m_Layer: 0
   m_Name: FightLine
   m_TagString: Untagged
@@ -1060,6 +1061,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &170939784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170939780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7c87af8db5304b847de68d02609c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveZ: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!4 &195652089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5879120975127321046, guid: 6d907e8e2ae7e9447a132328729c9efa, type: 3}
@@ -3739,6 +3754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d404216edacf4a4bb8b071662671deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveZ: {fileID: 0}
 --- !u!4 &773714120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2993446289532028765, guid: 5f885bf8bdacef649b9e77233cee0e07, type: 3}
@@ -11378,7 +11394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_LocalRotation.w
