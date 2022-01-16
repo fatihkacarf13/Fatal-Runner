@@ -7,6 +7,7 @@ public class PlayerFight : ScaleControl
     [SerializeField] private NewPlayer _player;
     [SerializeField] private MoveZ _moveZ;
 
+
     bool fight = false;
 
 
