@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class NewPlayer : BaseColorable
 {
     [SerializeField] private ColorType startColor;
-    public float increment =  0.1f;
+    public float increment =  0.05f;
     static int _scoreCount = 0;
     [SerializeField] private Text scoreText;
     static int level = 0;
@@ -21,14 +21,14 @@ public class NewPlayer : BaseColorable
     public void ScaleUp()
     {
         transform.localScale += Vector3.one*increment;
-        transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
         Score++;
     }
 
     public void ScaleDown()
     {
         transform.localScale -= Vector3.one * increment;
-        transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
         Score--;
 
     }
