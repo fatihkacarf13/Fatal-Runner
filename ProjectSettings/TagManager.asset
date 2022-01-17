@@ -18,6 +18,7 @@ TagManager:
   - Wall
   - Fight
   - PlayerPunch
+  - BossPunch
   layers:
   - Default
   - TransparentFX

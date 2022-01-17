@@ -33,4 +33,12 @@ public class AnimationStateController : MonoBehaviour
     {
         _animator.SetTrigger("isIdle");
     }
+
+    [Button]
+    public void PlayerDeath()
+    {
+        _animator.SetTrigger("isPlayerDeath");
+    }
+
+
 }

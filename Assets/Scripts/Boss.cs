@@ -8,10 +8,10 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private BossAnimations _bossanimStateController;
 
-    public void Update()
-    {
-        Debug.Log(bossHealt);
-    }
+    //public void Update()
+    //{
+    //    Debug.Log(bossHealt);
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,18 +20,27 @@ public class Boss : MonoBehaviour
             if (bossHealt>10)
             {
                 _bossanimStateController.BossHitted();
-
+                 HittedAndHit();
+                
             }
             if (bossHealt<=10)
             {
+                transform.Translate(Vector3.forward * Time.deltaTime * 10);
                 _bossanimStateController.BossDeath();
+                
             }
            
         }
         
     }
 
-    
+    public IEnumerator HittedAndHit()
+    {
+        
+        yield return new WaitForSeconds(1.5f);
+        _bossanimStateController.BossPunch();
+    }
 
+    
 
 }

@@ -23,6 +23,21 @@ public class PlayerPunch : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BossPunch"))
+        {
+            _animStateController.Hitted();
+            if (_player.playerHealt <= 10)
+            {
+                _animStateController.PlayerDeath();
+
+            }
+          
+
+        }
+
+    }
     private void EnablePunch()
     {
         if (_drag.enabled==false)

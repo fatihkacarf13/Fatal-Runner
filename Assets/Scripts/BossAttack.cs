@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class BossAttack : MonoBehaviour
 {
-
     private void OnTriggerEnter(Collider other)
     {
-        var boss = other.GetComponent<Boss>();
-        if (boss)
+        var player = other.GetComponent<NewPlayer>();
+        if (player)
         {
-            boss.bossHealt -= 10;
+            player.playerHealt -= 10;
         }
     }
 }
