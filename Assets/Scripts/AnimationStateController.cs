@@ -1,41 +1,36 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
-    [SerializeField] private MoveZ _moveZ;
-    Animator animator;
 
-    private void Awake()
+    [SerializeField] private Animator _animator;
+
+
+
+    [Button]
+    public void Run()
     {
-        animator = GetComponent<Animator>();
-        _moveZ = FindObjectOfType<MoveZ>();
+        _animator.SetTrigger("isRunning");
     }
 
-
-
-    void Update()
+    [Button]
+    public void Punch()
     {
-        if (_moveZ.isMove==true)
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
+        _animator.SetTrigger("isPunching");
+    }
 
-        if (Input.GetKey(KeyCode.W))
-        {
+    [Button]
+    public void Hitted()
+    {
+        _animator.SetTrigger("isHitted");
+    }
 
-            animator.SetBool("isPunching", true);
-
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            animator.SetBool("isPunching", false);
-
-        }
+    [Button]
+    public void Idle()
+    {
+        _animator.SetTrigger("isIdle");
     }
 }

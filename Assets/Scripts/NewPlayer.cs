@@ -8,28 +8,55 @@ using UnityEngine.UI;
 public class NewPlayer : BaseColorable
 {
     [SerializeField] private ColorType startColor;
-    public float increment =  0.05f;
-    static int _scoreCount = 0;
     [SerializeField] private Text scoreText;
+    [SerializeField] private AnimationStateController _animStateController;
+    [SerializeField] private MoveZ _moveZ;
+    public int playerHealt = 20;
+    public float increment = 0.05f;
+    static int _scoreCount = 0;
     static int level = 0;
+    private bool _lastIsMove;
 
     private void Awake()
     {
         SetColor(startColor);
+
+    }
+
+
+    private void Update()
+    {
+        UpdateRunIdle();
+    }
+
+    private void UpdateRunIdle()
+    {
+        if (_lastIsMove != _moveZ.isMove)
+        {
+            _lastIsMove = _moveZ.isMove;
+            if (_moveZ.isMove)
+            {
+                _animStateController.Run();
+            }
+            else
+            {
+                _animStateController.Idle();
+            }
+        }
     }
 
     public void ScaleUp()
     {
-        transform.localScale += Vector3.one*increment;
-        //transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
+        transform.localScale += Vector3.one * increment;
         Score++;
+        playerHealt++;
     }
 
     public void ScaleDown()
     {
         transform.localScale -= Vector3.one * increment;
-        //transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
         Score--;
+        playerHealt--;
 
     }
 
@@ -41,13 +68,13 @@ public class NewPlayer : BaseColorable
         }
         set
         {
-            if (value>0)
+            if (value > 0)
             {
                 _scoreCount = value;
             }
             else
             {
-                _scoreCount = 0;  
+                _scoreCount = 0;
             }
             scoreText.text = "Score:" + _scoreCount;
         }
@@ -58,7 +85,7 @@ public class NewPlayer : BaseColorable
         level++;
         //level = level % SceneManager.sceneCount;
         SceneManager.LoadScene(level);
-        if (level==3)
+        if (level == 3)
         {
             level--;
         }

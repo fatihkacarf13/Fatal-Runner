@@ -1191,8 +1191,11 @@ MonoBehaviour:
   colorType: 0
   renderer: {fileID: 8051404651800943636}
   startColor: 0
-  increment: 0.05
   scoreText: {fileID: 0}
+  _animStateController: {fileID: 0}
+  _moveZ: {fileID: 0}
+  playerHealt: 20
+  increment: 0.05
 --- !u!1 &4104964703820721065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2062,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2477152504647978758, guid: 0701dc011a6b93b4a9a84079d8f3abae, type: 3}
+  - {fileID: 2100000, guid: 60c51d34f47b8a341a89f48914c2470b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
