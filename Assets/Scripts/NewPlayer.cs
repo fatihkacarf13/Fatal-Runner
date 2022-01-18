@@ -20,7 +20,7 @@ public class NewPlayer : BaseColorable
     private void Awake()
     {
         SetColor(startColor);
-
+        
     }
 
 
@@ -47,6 +47,7 @@ public class NewPlayer : BaseColorable
 
     public void ScaleUp()
     {
+        
         transform.localScale += Vector3.one * increment;
         Score++;
         playerHealt++;
@@ -54,6 +55,7 @@ public class NewPlayer : BaseColorable
 
     public void ScaleDown()
     {
+        
         transform.localScale -= Vector3.one * increment;
         Score--;
         playerHealt--;

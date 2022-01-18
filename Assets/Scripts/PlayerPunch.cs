@@ -7,6 +7,7 @@ public class PlayerPunch : MonoBehaviour
     [SerializeField] private Drag _drag;
     [SerializeField] private NewPlayer _player;
     [SerializeField] private AnimationStateController _animStateController;
+    private bool playerDeath = false;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlayerPunch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& !playerDeath)
         {
             EnablePunch();
         }
@@ -27,10 +28,12 @@ public class PlayerPunch : MonoBehaviour
     {
         if (other.CompareTag("BossPunch"))
         {
+            _player.playerHealt -= 10;
             _animStateController.Hitted();
-            if (_player.playerHealt <= 10)
+            if (_player.playerHealt <= 0)
             {
                 _animStateController.PlayerDeath();
+                playerDeath = true;
 
             }
           
@@ -38,6 +41,8 @@ public class PlayerPunch : MonoBehaviour
         }
 
     }
+
+
     private void EnablePunch()
     {
         if (_drag.enabled==false)
