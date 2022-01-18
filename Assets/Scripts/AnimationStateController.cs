@@ -40,5 +40,11 @@ public class AnimationStateController : MonoBehaviour
         _animator.SetTrigger("isPlayerDeath");
     }
 
+    [Button]
+    public void PlayerWin()
+    {
+        _animator.SetTrigger("isWin");
+    }
+
 
 }
