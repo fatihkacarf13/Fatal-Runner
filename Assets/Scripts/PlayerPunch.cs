@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class PlayerPunch : MonoBehaviour
 {
-    [SerializeField] private Drag _drag;
-    [SerializeField] private NewPlayer _player;
+    public static PlayerPunch Instance;
     [SerializeField] private AnimationStateController _animStateController;
-    private bool death = false;
-    Boss boss;
+    public bool death = false;
 
-    void Start()
+    public void Awake()
     {
-        _player = FindObjectOfType<NewPlayer>();
-        _drag = _player.GetComponent<Drag>();
-        boss = FindObjectOfType<Boss>();
+        if (Instance==null)
+        {
+            Instance = this;
+        }
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)&& !death)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !death)
         {
             EnablePunch();
-        }
-        if (boss.bossHealt==0)
-        {
-            death = true;
         }
     }
 
@@ -34,23 +29,19 @@ public class PlayerPunch : MonoBehaviour
     {
         if (other.CompareTag("BossPunch"))
         {
-            _player.playerHealt -= 10;
+            NewPlayer.Instance.playerHealt -= 10;
             _animStateController.Hitted();
-            if (_player.playerHealt <= 0)
+            if (NewPlayer.Instance.playerHealt <= 0)
             {
                 _animStateController.PlayerDeath();
                 death = true;
-
             }
-          
-
         }
-
     }
 
     private void EnablePunch()
     {
-        if (_drag.enabled==false)
+        if (Drag.Instance.enabled == false)
         {
             _animStateController.Punch();
         }

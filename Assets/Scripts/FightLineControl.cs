@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class FightLineControl : MonoBehaviour
 {
-    [SerializeField] private MoveZ _moveZ;
-    [SerializeField] private Drag _drag;
-    [SerializeField] private NewPlayer _player;
-    void Awake()
-    {
-        _moveZ = FindObjectOfType<MoveZ>();
-        _player = FindObjectOfType<NewPlayer>();
-         _drag = _player.GetComponent<Drag>();
-    }
+    //[SerializeField] private NewPlayer _player;
+    //void Awake()
+    //{
+    //    _player = FindObjectOfType<NewPlayer>();
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<NewPlayer>();
+        var player = NewPlayer.Instance.GetComponent<NewPlayer>();
         if (player)
         {
-            _moveZ.isMove = false;
-            _drag.enabled = false;    
+            MoveZ.Instance.isMove = false;
+            Drag.Instance.enabled = false;
         }
     }
 }

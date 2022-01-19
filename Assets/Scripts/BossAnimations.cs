@@ -32,6 +32,9 @@ public class BossAnimations : MonoBehaviour
         _bossAnimator.SetTrigger("isBossDeath");
     }
 
-
+    public void BossWin()
+    {
+        _bossAnimator.SetTrigger("isBossWin");
+    }
 
 }

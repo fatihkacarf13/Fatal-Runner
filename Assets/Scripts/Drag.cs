@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
+    public static Drag Instance;
     public float clampX;
     public float speed;
     private Vector3 lastMousePosition;
+    
+
+    public void Awake()
+    {
+        if (Instance==null)
+        {
+            Instance = this;
+        }
+    }
 
     void FixedUpdate()
     {

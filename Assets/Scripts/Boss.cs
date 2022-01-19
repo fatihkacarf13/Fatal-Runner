@@ -5,6 +5,15 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {   
     public int bossHealt = 40;
+    public static Boss Instance;
+
+    public void Awake()
+    {
+        if (Instance==null)
+        {
+            Instance = this;
+        }
+    }
 
     [SerializeField] private BossAnimations _bossanimStateController;
     [SerializeField] private AnimationStateController _playerAnimation;
@@ -23,13 +32,11 @@ public class Boss : MonoBehaviour
             {
                 _bossanimStateController.BossDeath();
                 _playerAnimation.PlayerWin();
-                
+                PlayerPunch.Instance.death = true;
             }
            
         }
         
     }
-
-    
 
 }
