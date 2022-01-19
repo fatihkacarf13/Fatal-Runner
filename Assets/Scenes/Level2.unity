@@ -201,6 +201,7 @@ Transform:
   - {fileID: 384925470}
   - {fileID: 433872644}
   - {fileID: 464703625}
+  - {fileID: 604372478}
   - {fileID: 375469521}
   - {fileID: 1374474215}
   - {fileID: 247968140}
@@ -209,48 +210,47 @@ Transform:
   - {fileID: 964492543}
   - {fileID: 1934762441}
   - {fileID: 1343228457}
+  - {fileID: 1005650178}
   - {fileID: 1408054158}
   - {fileID: 195652089}
   - {fileID: 1518555003}
   - {fileID: 2136159698}
+  - {fileID: 1532713681}
   - {fileID: 1525719483}
   - {fileID: 811721823}
-  - {fileID: 604372478}
-  - {fileID: 1460632307}
-  - {fileID: 1813033121}
-  - {fileID: 1030111172}
-  - {fileID: 1317823097}
-  - {fileID: 1287828066}
-  - {fileID: 440522882}
-  - {fileID: 227924183}
-  - {fileID: 708215817}
-  - {fileID: 2014481120}
-  - {fileID: 1803944521}
-  - {fileID: 1207628508}
-  - {fileID: 662723456}
-  - {fileID: 1083334403}
+  - {fileID: 1064186400}
   - {fileID: 494542197}
-  - {fileID: 1184936704}
-  - {fileID: 1645691671}
-  - {fileID: 72894887}
-  - {fileID: 2001079895}
+  - {fileID: 1813033121}
   - {fileID: 313750528}
+  - {fileID: 1460632307}
   - {fileID: 1715512941}
   - {fileID: 1298296636}
+  - {fileID: 1287828066}
   - {fileID: 772889015}
-  - {fileID: 631632388}
-  - {fileID: 971302801}
-  - {fileID: 1532713681}
-  - {fileID: 1063119057}
-  - {fileID: 463646152}
-  - {fileID: 1949067957}
-  - {fileID: 1005650178}
-  - {fileID: 1247128927}
   - {fileID: 1239375102}
-  - {fileID: 1064186400}
+  - {fileID: 631632388}
+  - {fileID: 1184936704}
+  - {fileID: 971302801}
+  - {fileID: 1030111172}
+  - {fileID: 662723456}
+  - {fileID: 1063119057}
+  - {fileID: 1083334403}
+  - {fileID: 463646152}
   - {fileID: 1655231178}
+  - {fileID: 1949067957}
+  - {fileID: 1317823097}
+  - {fileID: 1207628508}
+  - {fileID: 1247128927}
   - {fileID: 1860924188}
+  - {fileID: 440522882}
+  - {fileID: 1803944521}
+  - {fileID: 227924183}
+  - {fileID: 2014481120}
+  - {fileID: 708215817}
+  - {fileID: 2001079895}
+  - {fileID: 1645691671}
   - {fileID: 2026555366}
+  - {fileID: 72894887}
   m_Father: {fileID: 61864548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7103,6 +7103,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 866524223}
+    - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: playerHealt
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_RootOrder
       value: 3
