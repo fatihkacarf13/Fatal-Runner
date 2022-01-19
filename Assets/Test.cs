@@ -12,9 +12,9 @@ public class Test : MonoBehaviour
     {
         Vector3 to = new Vector3(0, 0, z);
 
-        transform.eulerAngles= Vector3.Lerp(transform.rotation.eulerAngles, to, speed);
-
-
+        transform.eulerAngles= Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime*speed);
     }
+
+
 
 }

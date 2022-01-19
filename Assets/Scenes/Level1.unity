@@ -2915,6 +2915,10 @@ PrefabInstance:
       propertyPath: _animStateController
       value: 
       objectReference: {fileID: 768113203}
+    - target: {fileID: 950787536, guid: 1e98bdc1fdf7fe64cbabdf82c927f575, type: 3}
+      propertyPath: _bossanimStateController
+      value: 
+      objectReference: {fileID: 928503454}
     - target: {fileID: 1383975688214131411, guid: 1e98bdc1fdf7fe64cbabdf82c927f575, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -6,6 +6,7 @@ public class PlayerPunch : MonoBehaviour
 {
     public static PlayerPunch Instance;
     [SerializeField] private AnimationStateController _animStateController;
+    [SerializeField] private BossAnimations _bossanimStateController;
     public bool death = false;
 
     public void Awake()
@@ -23,6 +24,10 @@ public class PlayerPunch : MonoBehaviour
         {
             EnablePunch();
         }
+        if (death)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +40,8 @@ public class PlayerPunch : MonoBehaviour
             {
                 _animStateController.PlayerDeath();
                 death = true;
+                _bossanimStateController.BossWin();
+                StartCoroutine(WaitForDance(3.25f));
             }
         }
     }
@@ -46,4 +53,12 @@ public class PlayerPunch : MonoBehaviour
             _animStateController.Punch();
         }
     }
+
+    private IEnumerator WaitForDance(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        NewPlayer.Instance.RestartLevel();
+    }
+
+
 }

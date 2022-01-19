@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {   
     public int bossHealt = 40;
@@ -14,7 +14,13 @@ public class Boss : MonoBehaviour
             Instance = this;
         }
     }
-
+    private void Update()
+    {
+        if (PlayerPunch.Instance.death)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
     [SerializeField] private BossAnimations _bossanimStateController;
     [SerializeField] private AnimationStateController _playerAnimation;
 
@@ -33,10 +39,21 @@ public class Boss : MonoBehaviour
                 _bossanimStateController.BossDeath();
                 _playerAnimation.PlayerWin();
                 PlayerPunch.Instance.death = true;
+                StartCoroutine(WaitForDance(3.25f));
             }
            
         }
         
     }
+
+    private IEnumerator WaitForDance(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        NewPlayer.Instance.NextLevel();
+    }
+
+
+
+
 
 }
