@@ -61,5 +61,4 @@ public class PlayerPunch : MonoBehaviour
         NewPlayer.Instance.RestartLevel();
     }
 
-
 }

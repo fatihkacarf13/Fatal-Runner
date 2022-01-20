@@ -384,7 +384,7 @@ MonoBehaviour:
   speed: 4
   z: 90
   _rotated: 0
-  resetTimer: 0.01
+  coolDown: 0.5
 --- !u!65 &894566279
 BoxCollider:
   m_ObjectHideFlags: 0

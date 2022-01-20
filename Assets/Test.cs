@@ -7,41 +7,32 @@ public class Test : MonoBehaviour
     public float speed;
     public float z;
     public bool _rotated = false;
-    public float resetTimer;
+    public float coolDown;
 
 
 
-    private void Start()
+    private void Update()
     {
-        InvokeRepeating("RotateP", Time.deltaTime, resetTimer);
-        InvokeRepeating("ResetRotate", resetTimer/2, resetTimer);
+        if (!_rotated)
+        {
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, z), Time.deltaTime * speed);
+            StartCoroutine(WaitForRotate(coolDown));
+        }
+        else
+        {
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * speed);
+            StartCoroutine(ResetRotate(coolDown));
+        }
     }
 
-    //private IEnumerator TrapDoorRotate(float waitTime)
-    //{
-    //    while (true)
-    //    {
-    //        for (int i = 0; i < 1; i++)
-    //        {
-                
-    //            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, z), Time.deltaTime * speed);
-    //            yield return new WaitForSeconds(waitTime);
-
-    //        }
-    //        yield return new WaitForSeconds(waitTime);
-    //        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * speed);
-    //    }
-      
-
-    //}
-
-    private void RotateP()
+    private IEnumerator WaitForRotate(float waitTime)
     {
-        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, z), Time.deltaTime * speed);
+        yield return new WaitForSeconds(waitTime);
+        _rotated = true;
     }
-
-    private void ResetRotate()
+    private IEnumerator ResetRotate(float waitTime)
     {
-        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, z), Time.deltaTime * speed);
+        yield return new WaitForSeconds(waitTime);
+        _rotated = false;
     }
 }
