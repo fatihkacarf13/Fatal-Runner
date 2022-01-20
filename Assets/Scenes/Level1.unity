@@ -7046,6 +7046,10 @@ PrefabInstance:
       propertyPath: playerHealt
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_RootOrder
       value: 1

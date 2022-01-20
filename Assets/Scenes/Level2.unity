@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 768113203, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
   m_PrefabInstance: {fileID: 4244890991559396662}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1942194723}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d404216edacf4a4bb8b071662671deb, type: 3}
@@ -6248,6 +6248,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5879120975127321046, guid: 6d907e8e2ae7e9447a132328729c9efa, type: 3}
   m_PrefabInstance: {fileID: 1263033485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1942194723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3902800139065251006, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+  m_PrefabInstance: {fileID: 4244890991559396662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1944460179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7106,6 +7111,34 @@ PrefabInstance:
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: playerHealt
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315210, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: speedZ
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: OnDragChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: OnDragChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: OnDragChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1942194723}
+    - target: {fileID: 4244890990537315211, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: OnDragChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_RootOrder
