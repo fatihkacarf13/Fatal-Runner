@@ -11,8 +11,9 @@ public class NewPlayer : BaseColorable
     [SerializeField] private Text scoreText;
     [SerializeField] private AnimationStateController _animStateController;
     public static NewPlayer Instance;
-    public int playerHealt = 0;
     public float increment = 0.05f;
+    public int playerHealt = 100;
+    public int playerPower = 0;
     static int _scoreCount = 0;
     static int level = 0;
     private bool _lastIsMove;
@@ -54,7 +55,7 @@ public class NewPlayer : BaseColorable
         
         transform.localScale += Vector3.one * increment;
         Score++;
-        playerHealt+=2;
+        playerPower += 5;
 
     }
 
@@ -63,7 +64,7 @@ public class NewPlayer : BaseColorable
         
         transform.localScale -= Vector3.one * increment;
         Score--;
-        playerHealt-=2;
+        playerPower -= 5;
 
 
     }

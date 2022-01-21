@@ -5,27 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class Wall : MonoBehaviour
 {
+    [SerializeField] private AnimationStateController _animStateController;
 
     private void OnTriggerEnter(Collider other)
     {
 
-        var player = other.GetComponent<NewPlayer>();
+        var player = NewPlayer.Instance.GetComponent<NewPlayer>();
+        if (other.CompareTag("PlayerPunch"))
+        {
+            NewPlayer.Instance.playerPower -= 15;
+            NewPlayer.Instance.ScaleDown();
+            NewPlayer.Instance.ScaleDown();
+            NewPlayer.Instance.ScaleDown();
+            Destroy(gameObject);
+        }
         if (player)
         {
-            if (player.transform.localScale.y * 2 > transform.localScale.y)
-            {
-                player.Score += 10;
-                Destroy(gameObject);
-
-            }
-            else
-            {
-                player.Score = 0;
-                Destroy(player.gameObject);
-                player.RestartLevel();
-            }
+            _animStateController.PlayerDeath();
+            PlayerPunch.Instance.death = true;
+            MoveZ.Instance.isMove = false;
+            Drag.Instance.enabled = false;
+            StartCoroutine(WaitForDeath(3.25f));
         }
-
         
     }
+
+    private IEnumerator WaitForDeath(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        NewPlayer.Instance.RestartLevel();
+    }
+
+
 }

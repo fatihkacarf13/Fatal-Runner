@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerHealthBar : MonoBehaviour
 {
     private Image _healthBar;
-    public float currentHealth ;
-    private float _maxHealth=40f;
+    public float currentHealth;
+    private float _maxHealth = 100;
 
     void Start()
     {

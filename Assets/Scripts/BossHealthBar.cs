@@ -7,7 +7,7 @@ public class BossHealthBar : MonoBehaviour
 {
     private Image _healthBar;
     public float currentHealth;
-    private float _maxHealth = 40f;
+    private float _maxHealth = 100;
 
     void Start()
     {

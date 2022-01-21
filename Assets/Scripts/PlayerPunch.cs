@@ -35,7 +35,7 @@ public class PlayerPunch : MonoBehaviour
     {
         if (other.CompareTag("BossPunch"))
         {
-            NewPlayer.Instance.playerHealt -= 10;
+            NewPlayer.Instance.playerHealt -= Damages.Instance.bossDagame;
             _animStateController.Hitted();
             if (NewPlayer.Instance.playerHealt <= 0)
             {

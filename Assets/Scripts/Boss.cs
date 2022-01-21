@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {   
-    public int bossHealt = 40;
+    public int bossHealt = 100;
     public static Boss Instance;
 
     public void Awake()
@@ -28,13 +28,13 @@ public class Boss : MonoBehaviour
     {
         if (other.CompareTag("PlayerPunch"))
         {
-            bossHealt -= 10;
+            bossHealt -= Damages.Instance.playerDamage;
             if (bossHealt>=10)
             {
                 _bossanimStateController.BossHitted();
                 
             }
-            if (bossHealt==0)
+            if (bossHealt<=0)
             {
                 _bossanimStateController.BossDeath();
                 _playerAnimation.PlayerWin();
