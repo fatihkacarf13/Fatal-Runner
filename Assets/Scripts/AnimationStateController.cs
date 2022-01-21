@@ -46,5 +46,11 @@ public class AnimationStateController : MonoBehaviour
         _animator.SetTrigger("isWin");
     }
 
+    [Button]
+    public void PlayerWall()
+    {
+        _animator.SetTrigger("isWall");
+    }
+
 
 }

@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class WallRange : MonoBehaviour
 {
+    [SerializeField] private AnimationStateController _playerAnimation;
+
     private void OnTriggerEnter(Collider other)
     {
         var player = NewPlayer.Instance.GetComponent<NewPlayer>();
         if (player)
         {
-            Drag.Instance.enabled = false;
+            if (NewPlayer.Instance.playerPower>=15)
+            {
+                _playerAnimation.PlayerWall();
+            }
+            
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        var player = NewPlayer.Instance.GetComponent<NewPlayer>();
-        if (player)
-        {
-            Drag.Instance.enabled = true;
-        }
-    }
+
 }

@@ -13,13 +13,10 @@ public class Wall : MonoBehaviour
         var player = NewPlayer.Instance.GetComponent<NewPlayer>();
         if (other.CompareTag("PlayerPunch"))
         {
-            NewPlayer.Instance.playerPower -= 15;
-            NewPlayer.Instance.ScaleDown();
-            NewPlayer.Instance.ScaleDown();
-            NewPlayer.Instance.ScaleDown();
+            
             Destroy(gameObject);
         }
-        if (player)
+        if (NewPlayer.Instance.playerPower<14)
         {
             _animStateController.PlayerDeath();
             PlayerPunch.Instance.death = true;
