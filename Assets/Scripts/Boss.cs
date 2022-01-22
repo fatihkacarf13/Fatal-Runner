@@ -39,7 +39,7 @@ public class Boss : MonoBehaviour
                 _bossanimStateController.BossDeath();
                 _playerAnimation.PlayerWin();
                 PlayerPunch.Instance.death = true;
-                StartCoroutine(WaitForDance(3.25f));
+                //StartCoroutine(WaitForDance(3.25f));
             }
            
         }

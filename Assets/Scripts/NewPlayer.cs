@@ -56,18 +56,17 @@ public class NewPlayer : BaseColorable
         transform.localScale += Vector3.one * increment;
         Score++;
         playerPower += 5;
-
     }
 
     public void ScaleDown()
     {
-        
         transform.localScale -= Vector3.one * increment;
         Score--;
         playerPower -= 5;
-
-
     }
+
+
+
 
     public int Score
     {

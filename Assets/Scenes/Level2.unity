@@ -6925,6 +6925,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 61864548}
     m_Modifications:
+    - target: {fileID: 1115462153887880726, guid: fb22e3fc9fc42c24eb45dd3f5ca353d7, type: 3}
+      propertyPath: bossHealth
+      value: 
+      objectReference: {fileID: 5124574700236416332}
+    - target: {fileID: 1115462153887880726, guid: fb22e3fc9fc42c24eb45dd3f5ca353d7, type: 3}
+      propertyPath: bossHitBox
+      value: 
+      objectReference: {fileID: 4244890991559396663}
+    - target: {fileID: 1115462153887880726, guid: fb22e3fc9fc42c24eb45dd3f5ca353d7, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 5124574700236416331}
     - target: {fileID: 1115462153887880729, guid: fb22e3fc9fc42c24eb45dd3f5ca353d7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7044,6 +7056,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 392655445, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: bossHealt
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 392655445, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: _bossanimStateController
       value: 
       objectReference: {fileID: 928503454}
@@ -7057,7 +7073,7 @@ PrefabInstance:
       objectReference: {fileID: 866524223}
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: playerHealt
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4244890990537315210, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: speedZ
@@ -7133,6 +7149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+--- !u!65 &4244890991559396663 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 392655446, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+  m_PrefabInstance: {fileID: 4244890991559396662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4472564816848201458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7344,6 +7365,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af0126858e6ca5a4eb6c386718d77d26, type: 3}
+--- !u!1 &5124574700236416331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5124574700067761443, guid: af0126858e6ca5a4eb6c386718d77d26, type: 3}
+  m_PrefabInstance: {fileID: 5124574700236416330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5124574700236416332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5124574699475553592, guid: af0126858e6ca5a4eb6c386718d77d26, type: 3}
+  m_PrefabInstance: {fileID: 5124574700236416330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6059727686475237301
 PrefabInstance:
   m_ObjectHideFlags: 0
