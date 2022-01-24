@@ -10,7 +10,7 @@ public class BossDeath : MonoBehaviour
     {
         if (Boss.Instance.bossHealt<=0)
         {
-            StartCoroutine(WaitForDance(1f));
+            StartCoroutine(WaitForDance(2f));
         }
     }
 
@@ -18,7 +18,7 @@ public class BossDeath : MonoBehaviour
     {
         if (bossBackJump)
         {
-            transform.Translate(Vector3.back * Time.deltaTime * NewPlayer.Instance.playerPower);
+            transform.Translate(Vector3.back * Time.deltaTime * NewPlayer.Instance.playerPower / 4);
         }
          yield return new WaitForSeconds(waitTime);
         bossBackJump = false;

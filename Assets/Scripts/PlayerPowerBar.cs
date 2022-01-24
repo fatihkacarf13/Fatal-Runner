@@ -7,11 +7,21 @@ public class PlayerPowerBar : MonoBehaviour
 {
     private Image _powerBar;
     public float currentPower;
+    public static PlayerPowerBar Instance;
+
     private float _maxHealth = 100f;
 
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         _powerBar = GetComponent<Image>();
+
 
     }
 
@@ -19,5 +29,11 @@ public class PlayerPowerBar : MonoBehaviour
     {
         currentPower = NewPlayer.Instance.playerPower;
         _powerBar.fillAmount = currentPower / _maxHealth;
+
     }
+
+
+
+
+
 }
