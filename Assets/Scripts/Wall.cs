@@ -10,7 +10,8 @@ public class Wall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        var player = NewPlayer.Instance.GetComponent<NewPlayer>();
+
+
         if (other.CompareTag("PlayerPunch"))
         {
             

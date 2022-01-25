@@ -7,9 +7,20 @@ public class SecPlayerPowerBar : MonoBehaviour
 {
     private Image _secPowerBar;
     public float secCurrentPower;
-    //private float _maxPower = 100f;
+    private float _secMaxPower = 100f;
     public float mButtonDownPower = 0;
     private bool canPowerDown = true;
+    private bool _powerLimit = false;
+
+    public static SecPlayerPowerBar Instance;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -19,7 +30,7 @@ public class SecPlayerPowerBar : MonoBehaviour
 
     void Update()
     {
-
+        
         if (FightLineControl.Instance.bossFight == true)
         {
             if (mButtonDownPower>0)
@@ -33,12 +44,20 @@ public class SecPlayerPowerBar : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0)&&!_powerLimit)
             {
                 mButtonDownPower += 5;
             }
             secCurrentPower = mButtonDownPower;
-            _secPowerBar.fillAmount = secCurrentPower / PlayerPowerBar.Instance.currentPower;
+            if (secCurrentPower==PlayerPowerBar.Instance.currentPower)
+            {
+                _powerLimit = true;
+            }
+            if (secCurrentPower< PlayerPowerBar.Instance.currentPower)
+            {
+                _powerLimit = false;
+            }
+            _secPowerBar.fillAmount = secCurrentPower / _secMaxPower;
 
         }
     }

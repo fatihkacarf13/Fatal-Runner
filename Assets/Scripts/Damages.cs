@@ -23,27 +23,27 @@ public class Damages : MonoBehaviour
 
     public void PowerToDamage()
     {
-        if (NewPlayer.Instance.playerPower >= 0)
+        if (SecPlayerPowerBar.Instance.secCurrentPower >= 0)
         {
             playerDamage = 10;
             bossDagame = 25;
         }
-        if (NewPlayer.Instance.playerPower > 24 )
+        if (SecPlayerPowerBar.Instance.secCurrentPower > 24 )
         {
             playerDamage = 15;
             bossDagame = 22;
         }
-        if (NewPlayer.Instance.playerPower > 49 )
+        if (SecPlayerPowerBar.Instance.secCurrentPower > 49 )
         {
             playerDamage = 17;
             bossDagame = 21;
         }
-        if (NewPlayer.Instance.playerPower > 74 )
+        if (SecPlayerPowerBar.Instance.secCurrentPower > 74 )
         {
             playerDamage = 25;
             bossDagame = 15;
         }
-        if (NewPlayer.Instance.playerPower >= 100)
+        if (SecPlayerPowerBar.Instance.secCurrentPower >= 100)
         {
             playerDamage = 34;
             bossDagame = 15;
