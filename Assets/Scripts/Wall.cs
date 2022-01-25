@@ -10,21 +10,18 @@ public class Wall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
-
-        if (other.CompareTag("PlayerPunch"))
+        if (other.CompareTag("Player"))
         {
-            
-            Destroy(gameObject);
+            if (NewPlayer.Instance.playerPower < 14)
+            {
+                _animStateController.PlayerDeath();
+                PlayerPunch.Instance.death = true;
+                MoveZ.Instance.isMove = false;
+                Drag.Instance.enabled = false;
+                StartCoroutine(WaitForDeath(3.25f));
+            }
         }
-        if (NewPlayer.Instance.playerPower<14)
-        {
-            _animStateController.PlayerDeath();
-            PlayerPunch.Instance.death = true;
-            MoveZ.Instance.isMove = false;
-            Drag.Instance.enabled = false;
-            StartCoroutine(WaitForDeath(3.25f));
-        }
+       
         
     }
 

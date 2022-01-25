@@ -9,7 +9,7 @@ public class NewPlayer : BaseColorable
 {
     [SerializeField] private ColorType startColor;
     [SerializeField] private Text scoreText;
-    [SerializeField] private AnimationStateController _animStateController;
+    public AnimationStateController animStateController;
     public static NewPlayer Instance;
     public float increment = 0.05f;
     public int playerHealt = 100;
@@ -41,11 +41,11 @@ public class NewPlayer : BaseColorable
             _lastIsMove = MoveZ.Instance.isMove;
             if (MoveZ.Instance.isMove)
             {
-                _animStateController.Run();
+                animStateController.Run();
             }
             else
             {
-                _animStateController.Idle();
+                animStateController.Idle();
             }
         }
     }
