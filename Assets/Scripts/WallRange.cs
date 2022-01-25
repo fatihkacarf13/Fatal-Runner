@@ -6,7 +6,15 @@ public class WallRange : MonoBehaviour
 {
     public GameObject force;
     public GameObject wall;
+    public Rigidbody[] boxsRigidbody;
 
+    private void Awake()
+    {
+        boxsRigidbody = GetComponentsInChildren<Rigidbody>();
+        EnableKinetic();
+
+
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -15,9 +23,9 @@ public class WallRange : MonoBehaviour
 
         if (player)
         {
-            if (NewPlayer.Instance.playerPower>=15)
+            if (NewPlayer.Instance.playerPower >= 15)
             {
-                
+                DisableKinetic();
                 StartCoroutine(WaitForBreak());
 
             }
@@ -25,9 +33,9 @@ public class WallRange : MonoBehaviour
             {
 
                 StartCoroutine(WaitForDeath());
-                
+
             }
-            
+
         }
     }
 
@@ -37,9 +45,9 @@ public class WallRange : MonoBehaviour
         NewPlayer.Instance.animStateController.PlayerWall();
         yield return new WaitForSeconds(waitTime);
         force.SetActive(true);
-        yield return new WaitForSeconds(waitTime*3);
+        yield return new WaitForSeconds(waitTime * 2);
         force.SetActive(false);
-        yield return new WaitForSeconds(waitTime*10);
+        yield return new WaitForSeconds(waitTime * 10);
         gameObject.SetActive(false);
         Destroy(wall.gameObject);
     }
@@ -56,6 +64,19 @@ public class WallRange : MonoBehaviour
         NewPlayer.Instance.RestartLevel();
     }
 
-
+    private void EnableKinetic()
+    {
+        foreach (Rigidbody col in boxsRigidbody)
+        {
+            col.isKinematic = true;
+        }
+    }
+    private void DisableKinetic()
+    {
+        foreach (Rigidbody col in boxsRigidbody)
+        {
+            col.isKinematic = false;
+        }
+    }
 
 }
