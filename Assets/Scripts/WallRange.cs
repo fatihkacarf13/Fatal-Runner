@@ -12,8 +12,6 @@ public class WallRange : MonoBehaviour
     {
         boxsRigidbody = GetComponentsInChildren<Rigidbody>();
         EnableKinetic();
-
-
     }
 
 
@@ -41,14 +39,13 @@ public class WallRange : MonoBehaviour
 
     private IEnumerator WaitForBreak()
     {
-        float waitTime = 0.2f;
+        float waitTime = 0.15f;
         NewPlayer.Instance.animStateController.PlayerWall();
         yield return new WaitForSeconds(waitTime);
         force.SetActive(true);
-        yield return new WaitForSeconds(waitTime * 2);
+        yield return new WaitForSeconds(waitTime * 1);
         force.SetActive(false);
         yield return new WaitForSeconds(waitTime * 10);
-        gameObject.SetActive(false);
         Destroy(wall.gameObject);
     }
 

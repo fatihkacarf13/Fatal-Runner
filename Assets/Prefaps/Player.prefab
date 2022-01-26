@@ -1384,7 +1384,7 @@ MonoBehaviour:
   animStateController: {fileID: 768113203}
   increment: 0.05
   playerHealt: 100
-  playerPower: 10
+  playerPower: 100
 --- !u!114 &768113203
 MonoBehaviour:
   m_ObjectHideFlags: 0

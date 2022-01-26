@@ -13,11 +13,25 @@ public class Enemy : MonoBehaviour
         {
 
             player.Score = 0;
-            Destroy(player.gameObject);
-            player.RestartLevel();
+            StartCoroutine(WaitForDeath());
+            NewPlayer.Instance.GetComponent<CapsuleCollider>().enabled = false;
 
         }
 
 
     }
+
+    private IEnumerator WaitForDeath()
+    {
+        float waitTime = 3f;
+        NewPlayer.Instance.animStateController.PlayerDeath();
+        PlayerPunch.Instance.death = true;
+        MoveZ.Instance.isMove = false;
+        Drag.Instance.enabled = false;
+        yield return new WaitForSeconds(waitTime);
+        NewPlayer.Instance.RestartLevel();
+    }
+
+
+
 }
