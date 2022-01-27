@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : BaseColorable
+public class Gate : BaseUIColorable
 {
     private void OnTriggerEnter(Collider other)
     {
