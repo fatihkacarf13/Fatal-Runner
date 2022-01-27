@@ -1299,7 +1299,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &4244890990537315316
 CapsuleCollider:
@@ -1377,14 +1377,15 @@ MonoBehaviour:
   Red: {fileID: 2100000, guid: 04b921345215e15409a6a96f14b6aa02, type: 2}
   Green: {fileID: 2100000, guid: 07664c0f762702046b4836df2b852916, type: 2}
   Yellow: {fileID: 2100000, guid: 65defccdf7ff1024887c41089f30a983, type: 2}
-  colorType: 0
+  colorType: 2
   renderer: {fileID: 8051404651800943636}
-  startColor: 0
+  startColor: 2
   scoreText: {fileID: 0}
+  floatingTextPrefab: {fileID: 3938914052932893460, guid: 45f903e2b9d93864eb201d4101f30cf0, type: 3}
   animStateController: {fileID: 768113203}
   increment: 0.05
   playerHealt: 100
-  playerPower: 100
+  playerPower: 0
 --- !u!114 &768113203
 MonoBehaviour:
   m_ObjectHideFlags: 0

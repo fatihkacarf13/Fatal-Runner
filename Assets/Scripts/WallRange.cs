@@ -25,6 +25,8 @@ public class WallRange : MonoBehaviour
             {
                 DisableKinetic();
                 StartCoroutine(WaitForBreak());
+                NewPlayer.Instance.playerPower -= 15;
+
 
             }
             else
