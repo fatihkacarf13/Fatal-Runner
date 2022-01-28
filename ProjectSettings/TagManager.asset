@@ -19,6 +19,7 @@ TagManager:
   - Fight
   - PlayerPunch
   - BossPunch
+  - JumpFinish
   layers:
   - Default
   - TransparentFX
