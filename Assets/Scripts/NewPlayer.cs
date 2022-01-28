@@ -1,9 +1,10 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class NewPlayer : BaseColorable
 {
@@ -31,6 +32,7 @@ public class NewPlayer : BaseColorable
 
     private void Update()
     {
+
         UpdateRunIdle();
         if (playerPower<0)
         {
@@ -65,7 +67,7 @@ public class NewPlayer : BaseColorable
         transform.localScale += Vector3.one * increment;
         Score++;
         playerPower += 5;
-        PowerPopUp("+5");
+        PowerPopUp(5);
     }
 
     public void ScaleDown()
@@ -73,7 +75,7 @@ public class NewPlayer : BaseColorable
         transform.localScale -= Vector3.one * increment;
         Score--;
         playerPower -= 5;
-        PowerPopUp("-5");
+        PowerPopUp(-5);
     }
 
 
@@ -99,15 +101,12 @@ public class NewPlayer : BaseColorable
         }
     }
 
+    [Button]
     public void NextLevel()
     {
         level++;
-        //level = level % SceneManager.sceneCount;
+        level = level % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(level);
-        if (level == 3)
-        {
-            level--;
-        }
     }
     public void RestartLevel()
     {
@@ -118,10 +117,21 @@ public class NewPlayer : BaseColorable
 
 
 
-    public void PowerPopUp(string text)
+    public void PowerPopUp(int value)
     {
-        GameObject prefab = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-        prefab.GetComponentInChildren<TextMesh>().text = text;
-        Destroy(prefab,0.5f);
+        var tmp = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity).GetComponentInChildren<TextMeshPro>();
+        tmp.text = value.ToString();
+        //tmp.color = value > 0 ? Color.white : Color.red;
+        if (value>=0)
+        {
+            tmp.text = "+" + value.ToString();
+            tmp.color = Color.white ;
+        }
+        else
+        {
+            tmp.text = value.ToString();
+            tmp.color = Color.red;
+        }
+        Destroy(tmp.gameObject,0.5f);
     }
 }

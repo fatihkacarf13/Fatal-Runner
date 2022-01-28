@@ -30,10 +30,10 @@ public class SecPlayerPowerBar : MonoBehaviour
 
     void Update()
     {
-        
+
         if (FightLineControl.Instance.bossFight == true)
         {
-            if (mButtonDownPower>0)
+            if (mButtonDownPower > 0 && PlayerPunch.Instance.death == false)
             {
                 if (canPowerDown)
                 {
@@ -44,16 +44,16 @@ public class SecPlayerPowerBar : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0)&&!_powerLimit)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !_powerLimit && PlayerPunch.Instance.death == false )
             {
                 mButtonDownPower += 5;
             }
             secCurrentPower = mButtonDownPower;
-            if (secCurrentPower==PlayerPowerBar.Instance.currentPower)
+            if (secCurrentPower == PlayerPowerBar.Instance.currentPower)
             {
                 _powerLimit = true;
             }
-            if (secCurrentPower< PlayerPowerBar.Instance.currentPower)
+            if (secCurrentPower < PlayerPowerBar.Instance.currentPower)
             {
                 _powerLimit = false;
             }
