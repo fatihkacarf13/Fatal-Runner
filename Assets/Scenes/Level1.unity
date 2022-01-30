@@ -5649,17 +5649,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f885bf8bdacef649b9e77233cee0e07, type: 3}
---- !u!114 &1933790742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7689271469553393629, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-  m_PrefabInstance: {fileID: 7689271467720430027}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1966130970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6172,7 +6161,7 @@ PrefabInstance:
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 1933790742}
+      objectReference: {fileID: 7689271467720430028}
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: startColor
       value: 0
@@ -6291,6 +6280,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026448950370898292, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_Name
+      value: BossHealthText
+      objectReference: {fileID: 0}
     - target: {fileID: 7689271468471663173, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -6379,5 +6384,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7689271468471663194, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316046239061737695, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+      propertyPath: m_Name
+      value: PlayerHealthText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+--- !u!114 &7689271467720430028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476256210066162621, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+  m_PrefabInstance: {fileID: 7689271467720430027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

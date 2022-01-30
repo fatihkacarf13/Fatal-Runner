@@ -1427,17 +1427,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5879120975127321046, guid: 6d907e8e2ae7e9447a132328729c9efa, type: 3}
   m_PrefabInstance: {fileID: 34553005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &296936895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7689271469553393629, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-  m_PrefabInstance: {fileID: 7689271467720430027}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &304535393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 02511112ef0986b4abe35dedf45ad8e1, type: 3}
@@ -8583,7 +8572,7 @@ PrefabInstance:
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 296936895}
+      objectReference: {fileID: 7689271467720430028}
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: startColor
       value: 1
@@ -8740,3 +8729,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7870393849071348213, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+--- !u!114 &7689271467720430028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476256210066162621, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+  m_PrefabInstance: {fileID: 7689271467720430027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

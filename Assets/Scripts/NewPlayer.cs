@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class NewPlayer : BaseColorable
 {
     [SerializeField] private ColorType startColor;
-    [SerializeField] private Text scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
     public GameObject floatingTextPrefab;
     public AnimationStateController animStateController;
     public static NewPlayer Instance;
