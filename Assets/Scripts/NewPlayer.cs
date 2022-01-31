@@ -98,7 +98,7 @@ public class NewPlayer : BaseColorable
             {
                 _scoreCount = 0;
             }
-            scoreText.text = "Score:" + _scoreCount;
+            scoreText.text = "Score: " + _scoreCount;
         }
     }
 

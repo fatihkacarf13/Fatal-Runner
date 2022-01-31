@@ -21,22 +21,20 @@ public class CameraControl : MonoBehaviour
                 transform.position = follow.transform.position + new Vector3(0, 4f + follow.transform.localScale.y, -5 - follow.transform.localScale.y);
             }
         }
-
-
-    }
-
-    void Update()
-    {
-        if (FightLineControl.Instance.bossFight == true)
+        else 
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
             transform.LookAt(fight);
-            if (Boss.Instance.bossHealt<=0)
+            if (Boss.Instance.bossHealt <= 0)
             {
-                transform.LookAt(boss);
+                
                 transform.position = boss.transform.position + new Vector3(6, 5, -6);
+                transform.LookAt(boss);
             }
         }
+
     }
+
+
 }
