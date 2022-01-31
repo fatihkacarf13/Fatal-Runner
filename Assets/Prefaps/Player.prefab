@@ -383,9 +383,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1337952144219340615}
+  - component: {fileID: 130175279}
   m_Layer: 0
   m_Name: mixamorig:RightToeBase
-  m_TagString: Untagged
+  m_TagString: PlayerPunch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,13 +399,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592652752850159992}
   m_LocalRotation: {x: 0.000000014650141, y: 6.5304206e-11, z: -3.3796616e-12, w: 1}
-  m_LocalPosition: {x: 0.00000002360438, y: -0.08728669, z: 0.107105605}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6146439098242047973}
   m_Father: {fileID: 3646174856920944531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &130175279
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592652752850159992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!1 &630840616502287334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,15 +1392,15 @@ MonoBehaviour:
   Red: {fileID: 2100000, guid: 04b921345215e15409a6a96f14b6aa02, type: 2}
   Green: {fileID: 2100000, guid: 07664c0f762702046b4836df2b852916, type: 2}
   Yellow: {fileID: 2100000, guid: 65defccdf7ff1024887c41089f30a983, type: 2}
-  colorType: 2
+  colorType: 0
   renderer: {fileID: 8051404651800943636}
-  startColor: 2
+  startColor: 0
   scoreText: {fileID: 0}
   floatingTextPrefab: {fileID: 3938914052932893460, guid: 45f903e2b9d93864eb201d4101f30cf0, type: 3}
   animStateController: {fileID: 768113203}
   increment: 0.05
   playerHealt: 100
-  playerPower: 0
+  playerPower: 100
 --- !u!114 &768113203
 MonoBehaviour:
   m_ObjectHideFlags: 0

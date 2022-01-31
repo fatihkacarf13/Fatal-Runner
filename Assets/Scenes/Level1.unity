@@ -6155,17 +6155,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
-      propertyPath: colorType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 7689271467720430028}
-    - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
-      propertyPath: startColor
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4244890990537315209, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: playerPower
       value: 0

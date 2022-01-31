@@ -40,16 +40,17 @@ public class AnimationStateController : MonoBehaviour
         _animator.SetTrigger("isPlayerDeath");
     }
 
-    [Button]
-    public void PlayerWin()
-    {
-        _animator.SetTrigger("isWin");
-    }
 
     [Button]
     public void PlayerWall()
     {
         _animator.SetTrigger("isWall");
+    }
+
+    [Button]
+    public void PlayerSuper()
+    {
+        _animator.SetTrigger("isSuper");
     }
 
 

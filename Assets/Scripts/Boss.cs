@@ -21,6 +21,7 @@ public class Boss : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
         }
     }
+
     [SerializeField] private BossAnimations _bossanimStateController;
     [SerializeField] private AnimationStateController _playerAnimation;
 
@@ -37,23 +38,21 @@ public class Boss : MonoBehaviour
             if (bossHealt<=0)
             {
                 _bossanimStateController.BossDeath();
-                _playerAnimation.PlayerWin();
                 PlayerPunch.Instance.death = true;
-                //StartCoroutine(WaitForDance(3.25f));
+                StartCoroutine(WaitForDeath(3.25f));
             }
-           
+
         }
         
     }
 
-    private IEnumerator WaitForDance(float waitTime)
+    private IEnumerator WaitForDeath(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         NewPlayer.Instance.NextLevel();
     }
 
-
-
+  
 
 
 }

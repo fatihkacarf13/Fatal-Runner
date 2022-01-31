@@ -8,10 +8,11 @@ public class PlayerPunch : MonoBehaviour
     [SerializeField] private AnimationStateController _animStateController;
     [SerializeField] private BossAnimations _bossanimStateController;
     public bool death = false;
+    private bool _criticHealth = false;
 
     public void Awake()
     {
-        if (Instance==null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -20,7 +21,8 @@ public class PlayerPunch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !death)
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !death && !_criticHealth)
         {
             EnablePunch();
         }
@@ -28,6 +30,22 @@ public class PlayerPunch : MonoBehaviour
         {
             GetComponent<BoxCollider>().enabled = false;
         }
+
+        if (Boss.Instance.bossHealt <= Damages.Instance.playerDamage&& !_criticHealth)
+        {
+            _animStateController.gameObject.SetActive(false);
+            _animStateController.gameObject.SetActive(true);
+            _bossanimStateController.BossIdle();
+            _criticHealth = true;
+            
+
+
+        }
+        if (_criticHealth)
+        {
+            SuperPunch();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,23 +59,39 @@ public class PlayerPunch : MonoBehaviour
                 _animStateController.PlayerDeath();
                 death = true;
                 _bossanimStateController.BossWin();
-                StartCoroutine(WaitForDance(3.25f));
+                StartCoroutine(WaitForRestart(3.25f));
             }
         }
     }
 
     private void EnablePunch()
     {
-        if (Drag.Instance.enabled == false)
+        if (Drag.Instance.enabled == false && !death)
         {
-            _animStateController.Punch();
+            if (_criticHealth)
+            {
+
+                SuperPunch();
+
+            }
+            else
+            {
+                _animStateController.Punch();
+            }
+            
+
         }
     }
-
-    private IEnumerator WaitForDance(float waitTime)
+    private void SuperPunch()
+    {
+        _animStateController.PlayerSuper();
+    }
+    private IEnumerator WaitForRestart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         NewPlayer.Instance.RestartLevel();
     }
+
+
 
 }
