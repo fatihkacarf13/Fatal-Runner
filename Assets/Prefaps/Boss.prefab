@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4557688342315671498}
   - component: {fileID: 1171396823036851555}
   - component: {fileID: 2053485293}
+  - component: {fileID: 1993871731}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -123,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 594102514257403544}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 190.53}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
   m_Children:
   - {fileID: 7318458716156959839}
   - {fileID: 1050308965347329181}
@@ -206,7 +207,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 1, z: -2.52}
+  m_Center: {x: 0, y: 1, z: -1.57}
+--- !u!114 &1993871731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594102514257403544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec70a5904a2050d4684252c1eb07c711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpScorePlatform: {fileID: 0}
 --- !u!1 &761576997482629820
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2250473661117991119}
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 1.2, y: 12, z: 0.8999939}
+  m_LocalPosition: {x: 1.2, y: 12, z: 1.75}
   m_LocalScale: {x: 2, y: 0.6153844, z: 0.25806454}
   m_Children: []
   m_Father: {fileID: 1171396822551815070}

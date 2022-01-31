@@ -29,7 +29,7 @@ public class CameraControl : MonoBehaviour
             if (Boss.Instance.bossHealt <= 0)
             {
                 
-                transform.position = boss.transform.position + new Vector3(6, 5, -6);
+                transform.position = boss.transform.position + new Vector3(6, 5, -10);
                 transform.LookAt(boss);
             }
         }

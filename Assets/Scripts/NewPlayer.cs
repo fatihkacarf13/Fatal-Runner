@@ -18,7 +18,6 @@ public class NewPlayer : BaseColorable
     public int playerHealt = 100;
     public int playerPower = 0;
     static int _scoreCount = 0;
-    static int level = 0;
     private bool _lastIsMove;
 
     private void Awake()
@@ -105,6 +104,7 @@ public class NewPlayer : BaseColorable
     [Button]
     public void NextLevel()
     {
+        var level = SceneManager.GetActiveScene().buildIndex;
         level++;
         level = level % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(level);
@@ -112,7 +112,7 @@ public class NewPlayer : BaseColorable
     public void RestartLevel()
     {
         _scoreCount = 0;
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
