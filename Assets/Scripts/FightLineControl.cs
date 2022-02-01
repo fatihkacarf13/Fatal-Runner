@@ -42,7 +42,6 @@ public class FightLineControl : MonoBehaviour
         {
             bossFight = true;
             bossHitBox.enabled = true;
-            Debug.Log("hitbox enabled");
             MoveZ.Instance.isMove = false;
             Drag.Instance.enabled = false;
             bossHealth.SetActive(true);

@@ -6,10 +6,12 @@ using UnityEngine.Events;
 public class Drag : MonoBehaviour
 {
     public static Drag Instance;
-    public float clampX;
-    public float speed;
-    private float _lastMousePosition;
+    [SerializeField] private float swerveSpeed = 0.5f;
+    [SerializeField] private float clampX = 60;
+
     private float _currentPositionX = 0;
+    private float _lastPositionX;
+
 
     public void Awake()
     {
@@ -21,26 +23,31 @@ public class Drag : MonoBehaviour
 
     void FixedUpdate()
     {
-        DragX();
+        Swerve();
     }
 
-  private void DragX()
+    public void Swerve()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0))
         {
-            _lastMousePosition = Input.mousePosition.x;
+            _lastPositionX = Input.mousePosition.x;
         }
-        if (Input.GetKey(KeyCode.Mouse0))
+
+        if (Input.GetMouseButton(0))
         {
-            if (_lastMousePosition==0)
+            if (_lastPositionX == 0)
             {
-                _lastMousePosition = Input.mousePosition.x;
+                _lastPositionX = Input.mousePosition.x;
             }
-            float diffX = Input.mousePosition.x - _lastMousePosition;
-            float moveX = diffX * speed *Time.deltaTime;
-            _currentPositionX += moveX;
+
+            float currentX = Input.mousePosition.x;
+            float deltaX = currentX - _lastPositionX;
+            float targetX = deltaX * swerveSpeed * Time.deltaTime;
+            _currentPositionX += targetX;
             _currentPositionX = Mathf.Clamp(_currentPositionX, -clampX, clampX);
             transform.position = new Vector3(_currentPositionX, transform.position.y, transform.position.z);
+            _lastPositionX = Input.mousePosition.x;
+            
         }
     }
 }
