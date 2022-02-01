@@ -2190,6 +2190,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1220128491}
     - target: {fileID: 1171396822551815057, guid: 3575acb78a8662044831b510be03a7a8, type: 3}
+      propertyPath: tapToFight
+      value: 
+      objectReference: {fileID: 1522101854}
+    - target: {fileID: 1171396822551815057, guid: 3575acb78a8662044831b510be03a7a8, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 974922883}
@@ -4466,6 +4470,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 304434185087451489, guid: 5bb3475b66b31dc449903dd08ad4839c, type: 3}
   m_PrefabInstance: {fileID: 1507117008}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1522101854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1219323717848128518, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+  m_PrefabInstance: {fileID: 7689271467720430027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1522225098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5993,7 +6002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595530405457330696, guid: fe3e6ac47ab5c3444a3e88b481fa352b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2595530405457330696, guid: fe3e6ac47ab5c3444a3e88b481fa352b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6187,6 +6196,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423195232357846532, guid: 703d72e0dd11ea4418c86653f180919b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6292,22 +6313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991801587024915942, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026448950370898292, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_Name
-      value: BossHealthText
-      objectReference: {fileID: 0}
     - target: {fileID: 7689271468471663173, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -6395,14 +6400,6 @@ PrefabInstance:
     - target: {fileID: 7689271468471663193, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689271468471663194, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316046239061737695, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
-      propertyPath: m_Name
-      value: PlayerHealthText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}

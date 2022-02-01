@@ -5308,6 +5308,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1691032220}
     - target: {fileID: 1171396822551815057, guid: 3575acb78a8662044831b510be03a7a8, type: 3}
+      propertyPath: tapToFight
+      value: 
+      objectReference: {fileID: 7689271467720430029}
+    - target: {fileID: 1171396822551815057, guid: 3575acb78a8662044831b510be03a7a8, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 680907597}
@@ -6473,3 +6477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7689271467720430029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1219323717848128518, guid: 8a7c44c46a5e1c747990d950eaecd5dc, type: 3}
+  m_PrefabInstance: {fileID: 7689271467720430027}
+  m_PrefabAsset: {fileID: 0}

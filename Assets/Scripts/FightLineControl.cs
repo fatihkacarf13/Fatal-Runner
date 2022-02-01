@@ -7,6 +7,7 @@ public class FightLineControl : MonoBehaviour
     public BoxCollider bossHitBox;
     public GameObject playerHealth;
     public GameObject bossHealth;
+    public GameObject tapToFight;
     public static FightLineControl Instance;
     public bool bossFight = false;
     private Vector3 fightPosition;
@@ -27,6 +28,10 @@ public class FightLineControl : MonoBehaviour
             fightPosition = new Vector3(0, player.transform.position.y, player.transform.position.z);
             player.transform.position = Vector3.Lerp(player.transform.position, fightPosition, Time.deltaTime * 10);
         }
+        if (PlayerPunch.Instance.death)
+        {
+            tapToFight.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +46,8 @@ public class FightLineControl : MonoBehaviour
             MoveZ.Instance.isMove = false;
             Drag.Instance.enabled = false;
             bossHealth.SetActive(true);
-            playerHealth.SetActive(true); 
+            playerHealth.SetActive(true);
+            tapToFight.SetActive(true);
         }
     }
 }
