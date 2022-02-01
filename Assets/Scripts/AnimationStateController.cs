@@ -54,5 +54,4 @@ public class AnimationStateController : MonoBehaviour
         _animator.SetTrigger("isSuper");
     }
 
-
 }

@@ -134,4 +134,4 @@ MonoBehaviour:
   target: {fileID: 0}
   fight: {fileID: 0}
   boss: {fileID: 0}
-  speed: 5
+  speed: 10

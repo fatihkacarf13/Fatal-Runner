@@ -135,6 +135,6 @@ public class NewPlayer : BaseColorable
             tmp.text = value.ToString();
             tmp.color = Color.red;
         }
-        Destroy(tmp.gameObject,0.5f);
+        Destroy(tmp.transform.parent.gameObject, 0.5f);
     }
 }

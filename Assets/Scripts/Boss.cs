@@ -16,6 +16,7 @@ public class Boss : MonoBehaviour
     }
     private void Update()
     {
+
         if (PlayerPunch.Instance.death)
         {
             GetComponent<BoxCollider>().enabled = false;
@@ -37,7 +38,7 @@ public class Boss : MonoBehaviour
             }
             if (bossHealt <= 0 && !PlayerPunch.Instance.death)
             {
-                Debug.Log("boss death");
+
                 _bossanimStateController.BossDeath();
                 PlayerPunch.Instance.death = true;
                 StartCoroutine(WaitForDeath(3.25f));

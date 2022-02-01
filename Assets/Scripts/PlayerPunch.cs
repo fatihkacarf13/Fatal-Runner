@@ -25,7 +25,6 @@ public class PlayerPunch : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !death && !_criticHealth)
         {
-            
             EnablePunch();
         }
         if (death)
