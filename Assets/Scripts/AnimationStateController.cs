@@ -37,6 +37,7 @@ public class AnimationStateController : MonoBehaviour
     [Button]
     public void PlayerDeath()
     {
+        _animator.Rebind();
         _animator.SetTrigger("isPlayerDeath");
     }
 

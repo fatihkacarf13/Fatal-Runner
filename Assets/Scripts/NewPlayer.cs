@@ -22,10 +22,12 @@ public class NewPlayer : BaseColorable
 
     private void Awake()
     {
+
         if (Instance==null)
         {
             Instance = this;
         }
+        Score = _scoreCount;
         SetColor(startColor);
     }
 

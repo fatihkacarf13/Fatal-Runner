@@ -54,7 +54,7 @@ public class WallRange : MonoBehaviour
     private IEnumerator WaitForDeath()
     {
         float waitTime = 3f;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.37f);
         NewPlayer.Instance.animStateController.PlayerDeath();
         PlayerPunch.Instance.death = true;
         MoveZ.Instance.isMove = false;

@@ -9,6 +9,7 @@ public class FightLineControl : MonoBehaviour
     public GameObject bossHealth;
     public static FightLineControl Instance;
     public bool bossFight = false;
+    private Vector3 fightPosition;
 
     public void Awake()
     {
@@ -17,14 +18,26 @@ public class FightLineControl : MonoBehaviour
             Instance = this;
         }
     }
+
+    private void Update()
+    {
+        if (bossFight)
+        {
+            var player = NewPlayer.Instance;
+            fightPosition = new Vector3(0, player.transform.position.y, player.transform.position.z);
+            player.transform.position = Vector3.Lerp(player.transform.position, fightPosition, Time.deltaTime * 10);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        var player = NewPlayer.Instance.GetComponent<NewPlayer>();
+       var newplayer = other.GetComponent<NewPlayer>();
          
-        if (player)
+        if (newplayer)
         {
             bossFight = true;
             bossHitBox.enabled = true;
+            Debug.Log("hitbox enabled");
             MoveZ.Instance.isMove = false;
             Drag.Instance.enabled = false;
             bossHealth.SetActive(true);
