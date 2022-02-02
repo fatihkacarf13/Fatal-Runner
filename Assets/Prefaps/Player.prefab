@@ -1325,7 +1325,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.35
+  m_Radius: 0.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -1374,8 +1374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d7c1bab2730bd428713e0b8848f0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swerveSpeed: 0.5
   clampX: 2
-  speed: 0.05
 --- !u!114 &4244890990537315209
 MonoBehaviour:
   m_ObjectHideFlags: 0
